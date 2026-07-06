@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8080/\"Shikho Showcase.dc.html\")",
+      "Bash(open *)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/shikho/.claude/image-cache/38acb1ad-dc19-4819-9b14-5dd95485cda8/4.png\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/shikho/.claude/image-cache/38acb1ad-dc19-4819-9b14-5dd95485cda8/3.png\")",
+      "Bash(git ls-remote *)",
+      "Bash(echo \"EXIT:$?\")",
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(git config *)",
+      "Bash(git credential-osxkeychain *)",
+      "Bash(git init *)",
+      "Bash(git rm *)",
+      "Bash(git add *)"
+    ]
+  }
+}

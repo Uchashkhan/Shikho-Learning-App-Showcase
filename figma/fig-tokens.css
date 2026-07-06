@@ -1,0 +1,455 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --color-black-100: rgba(0,0,0,0.07); /* @kind color */
+  --color-black-150: rgba(0,0,0,0.12); /* @kind color */
+  --color-black-200: rgba(0,0,0,0.16); /* @kind color */
+  --color-black-300: rgba(0,0,0,0.24); /* @kind color */
+  --color-black-400: rgba(0,0,0,0.32); /* @kind color */
+  --color-black-4: rgba(0,0,0,0.04); /* @kind color */
+  --color-black-50: rgba(0,0,0,0.04); /* @kind color */
+  --color-black-800: rgba(0,0,0,0.72); /* @kind color */
+  --color-black-950: rgb(0,0,0); /* @kind color */
+  --color-danger-500: rgb(240,61,61); /* @kind color */
+  --color-dark-100: rgb(244,244,244); /* @kind color */
+  --color-dark-200: rgb(238,238,238); /* @kind color */
+  --color-dark-700: rgb(33,33,33); /* @kind color */
+  --color-gray-200: rgb(235,236,240); /* @kind color */
+  --color-gray-300: rgb(221,223,228); /* @kind color */
+  --color-gray-600: rgb(140,146,156); /* @kind color */
+  --color-gray-700: rgb(91,97,109); /* @kind color */
+  --color-gray-950: rgb(10,12,17); /* @kind color */
+  --color-gray: var(--color-gray-200); /* @kind color */
+  --color-primary-100: rgb(237,246,255); /* @kind color */
+  --color-primary-900: rgb(17,25,115); /* @kind color */
+  --color-primary-950: rgb(10,16,83); /* @kind color */
+  --color-secondary-2-500: rgb(250,74,4); /* @kind color */
+  --color-shikho-ai-200: rgb(195,148,232); /* @kind color */
+  --color-shikho-ai-400: rgb(143,50,203); /* @kind color */
+  --color-vanilla-gray-200: rgb(242,241,234); /* @kind color */
+  --color-vanilla-gray-300: rgb(233,232,221); /* @kind color */
+  --color-vanilla-gray-600: rgb(147,149,135); /* @kind color */
+  --color-vanilla-gray-700: rgb(93,96,84); /* @kind color */
+  --color-vanilla-gray-950: rgb(16,17,13); /* @kind color */
+  --color-warning-400: rgb(253,203,53); /* @kind color */
+  --color-warning-500: rgb(252,191,4); /* @kind color */
+  --color-white-150: rgba(255,255,255,0.12); /* @kind color */
+  --color-white-500: rgba(255,255,255,0.48); /* @kind color */
+  --color-white-50: rgba(255,255,255,0.04); /* @kind color */
+  --color-white-800: rgba(255,255,255,0.72); /* @kind color */
+  --color-white-900: rgba(255,255,255,0.88); /* @kind color */
+  --color-white-950: rgb(255,255,255); /* @kind color */
+  --color: rgb(255,255,255); /* @kind color */
+  --elevation-black-50: var(--color-black-50); /* @kind color */
+  --elevation-shadow: var(--color-black-4); /* @kind color */
+  --error-500: rgb(239,68,68); /* @kind color */
+  --fill-primary-100: var(--color-primary-100); /* @kind color */
+  --fill-white-950: var(--color-white-950); /* @kind color */
+  --font-letter-spacing-none: 0;
+  --font-line-height-caption-2: 16;
+  --font-size-caption-2: 12;
+  --global-accent-accent: var(--primary-colors-100); /* @kind color */
+  --global-surfaces-surface-accent: var(--global-accent-accent); /* @kind color */
+  --gray-100: rgb(245,245,245); /* @kind color */
+  --gray-200: rgb(239,239,239); /* @kind color */
+  --gray-300: rgb(225,225,225); /* @kind color */
+  --gray-600: rgb(118,118,118); /* @kind color */
+  --gray-700: rgb(98,98,98); /* @kind color */
+  --gray-800: rgb(67,67,67); /* @kind color */
+  --neutral-transparent-black-black-4: var(--color-black-50); /* @kind color */
+  --outline-black-100: var(--color-black-100); /* @kind color */
+  --outline-black-50: var(--color-black-50); /* @kind color */
+  --outline-gray-300: var(--color-gray-300); /* @kind color */
+  --overlay-black-300: var(--color-black-300); /* @kind color */
+  --primary-colors-100: rgb(35,136,255); /* @kind color */
+  --purple-dark: rgb(68,29,89); /* @kind color */
+  --purple: rgb(124,21,180); /* @kind color */
+  --schemes-on-surface: rgb(29,27,32); /* @kind color */
+  --sections-bg-accent: var(--global-surfaces-surface-accent); /* @kind color */
+  --subject-colors-agriculture-dark: rgb(105,177,67); /* @kind color */
+  --subject-colors-agriculture-main: rgb(122,203,78); /* @kind color */
+  --subject-colors-bangladesh-global-studies-main: rgb(192,113,41); /* @kind color */
+  --subject-colors-business-math-dark: rgb(107,81,255); /* @kind color */
+  --subject-colors-business-org-mgt-dark: rgb(33,133,200); /* @kind color */
+  --subject-colors-business-studies-dark: rgb(216,75,214); /* @kind color */
+  --subject-colors-chemistry-dark: rgb(33,164,238); /* @kind color */
+  --subject-colors-cicics-dark: rgb(14,146,159); /* @kind color */
+  --subject-colors-economics-dark: rgb(32,126,152); /* @kind color */
+  --subject-colors-finance-dark: rgb(217,56,83); /* @kind color */
+  --subject-colors-general-math-dark: rgb(236,104,32); /* @kind color */
+  --subject-colors-general-science-dark: rgb(75,129,95); /* @kind color */
+  --subject-colors-general-science-main: rgb(95,149,115); /* @kind color */
+  --subject-colors-islam-noitik-dark: rgb(37,92,99); /* @kind color */
+  --subject-colors-logic-dark: rgb(152,28,129); /* @kind color */
+  --subject-colors-marketing-dark: rgb(225,88,138); /* @kind color */
+  --subject-colors-pm-mkt-dark: rgb(47,95,130); /* @kind color */
+  --subject-colors-social-work-dark: rgb(178,69,125); /* @kind color */
+  --subject-colors-sociology-dark: rgb(165,151,46); /* @kind color */
+  --subject-colors-statistics-dark: rgb(96,83,215); /* @kind color */
+  --success-700: rgb(21,128,61); /* @kind color */
+  --text-gray-700: var(--color-gray-700); /* @kind color */
+  --text-gray-950: var(--color-gray-950); /* @kind color */
+  --text-warning-500: var(--color-warning-500); /* @kind color */
+  --text-white-950: var(--color-white-950); /* @kind color */
+  --white: rgb(255,255,255); /* @kind color */
+}
+
+:root[data-theme="light"], .light {
+  --schemes-on-surface: rgb(0,0,0); /* @kind color */
+  --schemes-on-surface: rgb(29,27,32); /* @kind color */
+}
+
+:root[data-theme="dark"], .dark {
+  --color-gray: var(--color-dark-700); /* @kind color */
+  --elevation-black-50: var(--color-black-150); /* @kind color */
+  --fill-primary-100: var(--color-primary-950); /* @kind color */
+  --fill-white-950: var(--color-black-950); /* @kind color */
+  --global-accent-accent: var(--primary-colors-100); /* @kind color */
+  --global-surfaces-surface-accent: var(--global-accent-accent); /* @kind color */
+  --neutral-transparent-black-black-4: var(--color-white-50); /* @kind color */
+  --outline-black-100: var(--color-white-50); /* @kind color */
+  --outline-black-50: var(--color-white-50); /* @kind color */
+  --outline-gray-300: var(--color-white-150); /* @kind color */
+  --overlay-black-300: var(--color-white-50); /* @kind color */
+  --primary-colors-100: rgb(35,136,255); /* @kind color */
+  --schemes-on-surface: rgb(230,224,233); /* @kind color */
+  --schemes-on-surface: rgb(255,249,255); /* @kind color */
+  --schemes-on-surface: rgb(255,255,255); /* @kind color */
+  --sections-bg-accent: var(--global-surfaces-surface-accent); /* @kind color */
+  --text-gray-700: var(--color-white-800); /* @kind color */
+  --text-gray-950: var(--color-white-950); /* @kind color */
+  --text-warning-500: var(--color-warning-400); /* @kind color */
+  --text-white-950: var(--color-white-950); /* @kind color */
+}
+
+:root[data-mode="monochrome-lt"] {
+  --schemes-on-surface: rgb(27,27,27); /* @kind color */
+}
+
+:root[data-mode="monochrome-dt"] {
+  --schemes-on-surface: rgb(226,226,226); /* @kind color */
+}
+
+:root[data-mode="pink-lt"] {
+  --schemes-on-surface: rgb(33,25,28); /* @kind color */
+}
+
+:root[data-mode="pink-dt"] {
+  --schemes-on-surface: rgb(238,223,227); /* @kind color */
+}
+
+:root[data-mode="rose-lt"] {
+  --schemes-on-surface: rgb(34,25,26); /* @kind color */
+}
+
+:root[data-mode="rose-dt"] {
+  --schemes-on-surface: rgb(240,222,223); /* @kind color */
+}
+
+:root[data-mode="red-lt"] {
+  --schemes-on-surface: rgb(35,25,24); /* @kind color */
+}
+
+:root[data-mode="red-dt"] {
+  --schemes-on-surface: rgb(241,222,220); /* @kind color */
+}
+
+:root[data-mode="orange-lt"] {
+  --schemes-on-surface: rgb(34,26,21); /* @kind color */
+}
+
+:root[data-mode="orange-dt"] {
+  --schemes-on-surface: rgb(240,223,215); /* @kind color */
+}
+
+:root[data-mode="yellow-lt"] {
+  --schemes-on-surface: rgb(31,27,19); /* @kind color */
+}
+
+:root[data-mode="yellow-dt"] {
+  --schemes-on-surface: rgb(235,225,212); /* @kind color */
+}
+
+:root[data-mode="chartreuse-lt"] {
+  --schemes-on-surface: rgb(27,28,20); /* @kind color */
+}
+
+:root[data-mode="chartreuse-dt"] {
+  --schemes-on-surface: rgb(229,227,214); /* @kind color */
+}
+
+:root[data-mode="green-lt"] {
+  --schemes-on-surface: rgb(24,29,24); /* @kind color */
+}
+
+:root[data-mode="green-dt"] {
+  --schemes-on-surface: rgb(224,228,219); /* @kind color */
+}
+
+:root[data-mode="teal-lt"] {
+  --schemes-on-surface: rgb(23,29,27); /* @kind color */
+}
+
+:root[data-mode="teal-dt"] {
+  --schemes-on-surface: rgb(221,228,225); /* @kind color */
+}
+
+:root[data-mode="cyan-lt"] {
+  --schemes-on-surface: rgb(23,28,30); /* @kind color */
+}
+
+:root[data-mode="cyan-dt"] {
+  --schemes-on-surface: rgb(222,227,230); /* @kind color */
+}
+
+:root[data-mode="blue-lt"] {
+  --schemes-on-surface: rgb(26,27,33); /* @kind color */
+}
+
+:root[data-mode="blue-dt"] {
+  --schemes-on-surface: rgb(226,226,233); /* @kind color */
+}
+
+:root[data-mode="indigo-lt"] {
+  --schemes-on-surface: rgb(28,27,33); /* @kind color */
+}
+
+:root[data-mode="indigo-dt"] {
+  --schemes-on-surface: rgb(229,225,233); /* @kind color */
+}
+
+:root[data-mode="purple-lt"] {
+  --schemes-on-surface: rgb(29,26,32); /* @kind color */
+}
+
+:root[data-mode="purple-dt"] {
+  --schemes-on-surface: rgb(231,224,232); /* @kind color */
+}
+
+:root[data-mode="wb"] {
+  --color-black-100: rgba(0,0,0,0.07); /* @kind color */
+  --color-black-150: rgba(0,0,0,0.12); /* @kind color */
+  --color-black-200: rgba(0,0,0,0.16); /* @kind color */
+  --color-black-300: rgba(0,0,0,0.24); /* @kind color */
+  --color-black-400: rgba(0,0,0,0.32); /* @kind color */
+  --color-black-50: rgba(0,0,0,0.04); /* @kind color */
+  --color-black-800: rgba(0,0,0,0.72); /* @kind color */
+  --color-black-950: rgb(0,0,0); /* @kind color */
+  --color-danger-500: rgb(240,61,61); /* @kind color */
+  --color-dark-100: rgb(244,244,244); /* @kind color */
+  --color-dark-200: rgb(238,238,238); /* @kind color */
+  --color-dark-700: rgb(33,33,33); /* @kind color */
+  --color-gray-200: rgb(235,236,240); /* @kind color */
+  --color-gray-300: rgb(221,223,228); /* @kind color */
+  --color-gray-600: rgb(140,146,156); /* @kind color */
+  --color-gray-700: rgb(91,97,109); /* @kind color */
+  --color-gray-950: rgb(10,12,17); /* @kind color */
+  --color-primary-100: rgb(255,231,221); /* @kind color */
+  --color-primary-900: rgb(65,24,14); /* @kind color */
+  --color-primary-950: rgb(26,11,8); /* @kind color */
+  --color-secondary-2-500: rgb(250,74,4); /* @kind color */
+  --color-shikho-ai-200: rgb(160,212,191); /* @kind color */
+  --color-shikho-ai-400: rgb(42,146,105); /* @kind color */
+  --color-vanilla-gray-200: rgb(242,241,234); /* @kind color */
+  --color-vanilla-gray-300: rgb(233,232,221); /* @kind color */
+  --color-vanilla-gray-600: rgb(147,149,135); /* @kind color */
+  --color-vanilla-gray-700: rgb(93,96,84); /* @kind color */
+  --color-vanilla-gray-950: rgb(16,17,13); /* @kind color */
+  --color-warning-400: rgb(253,203,53); /* @kind color */
+  --color-warning-500: rgb(252,191,4); /* @kind color */
+  --color-white-150: rgba(255,255,255,0.12); /* @kind color */
+  --color-white-500: rgba(255,255,255,0.48); /* @kind color */
+  --color-white-50: rgba(255,255,255,0.04); /* @kind color */
+  --color-white-800: rgba(255,255,255,0.72); /* @kind color */
+  --color-white-900: rgba(255,255,255,0.88); /* @kind color */
+  --color-white-950: rgb(255,255,255); /* @kind color */
+  --subject-colors-agriculture-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-agriculture-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-bangladesh-global-studies-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-business-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-org-mgt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-studies-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-chemistry-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-cicics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-economics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-finance-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-islam-noitik-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-logic-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-marketing-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-pm-mkt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-social-work-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-sociology-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-statistics-dark: rgb(249,179,179); /* @kind color */
+}
+
+:root[data-mode="project-y"] {
+  --color-black-100: rgba(0,0,0,0.07); /* @kind color */
+  --color-black-150: rgba(0,0,0,0.12); /* @kind color */
+  --color-black-200: rgba(0,0,0,0.16); /* @kind color */
+  --color-black-300: rgba(0,0,0,0.24); /* @kind color */
+  --color-black-400: rgba(0,0,0,0.32); /* @kind color */
+  --color-black-50: rgba(0,0,0,0.04); /* @kind color */
+  --color-black-800: rgba(0,0,0,0.72); /* @kind color */
+  --color-black-950: rgb(0,0,0); /* @kind color */
+  --color-danger-500: rgb(240,61,61); /* @kind color */
+  --color-dark-100: rgb(244,244,244); /* @kind color */
+  --color-dark-200: rgb(238,238,238); /* @kind color */
+  --color-dark-700: rgb(33,33,33); /* @kind color */
+  --color-gray-200: rgb(235,236,240); /* @kind color */
+  --color-gray-300: rgb(221,223,228); /* @kind color */
+  --color-gray-600: rgb(140,146,156); /* @kind color */
+  --color-gray-700: rgb(91,97,109); /* @kind color */
+  --color-gray-950: rgb(10,12,17); /* @kind color */
+  --color-primary-100: rgb(222,234,255); /* @kind color */
+  --color-primary-900: rgb(0,43,136); /* @kind color */
+  --color-primary-950: rgb(0,24,75); /* @kind color */
+  --color-secondary-2-500: rgb(250,74,4); /* @kind color */
+  --color-shikho-ai-200: rgb(160,212,191); /* @kind color */
+  --color-shikho-ai-400: rgb(42,146,105); /* @kind color */
+  --color-vanilla-gray-200: rgb(242,241,234); /* @kind color */
+  --color-vanilla-gray-300: rgb(233,232,221); /* @kind color */
+  --color-vanilla-gray-600: rgb(147,149,135); /* @kind color */
+  --color-vanilla-gray-700: rgb(93,96,84); /* @kind color */
+  --color-vanilla-gray-950: rgb(16,17,13); /* @kind color */
+  --color-warning-400: rgb(253,203,53); /* @kind color */
+  --color-warning-500: rgb(252,191,4); /* @kind color */
+  --color-white-150: rgba(255,255,255,0.12); /* @kind color */
+  --color-white-500: rgba(255,255,255,0.48); /* @kind color */
+  --color-white-50: rgba(255,255,255,0.04); /* @kind color */
+  --color-white-800: rgba(255,255,255,0.72); /* @kind color */
+  --color-white-900: rgba(255,255,255,0.88); /* @kind color */
+  --color-white-950: rgb(255,255,255); /* @kind color */
+  --subject-colors-agriculture-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-agriculture-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-bangladesh-global-studies-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-business-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-org-mgt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-studies-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-chemistry-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-cicics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-economics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-finance-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-islam-noitik-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-logic-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-marketing-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-pm-mkt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-social-work-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-sociology-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-statistics-dark: rgb(249,179,179); /* @kind color */
+}
+
+:root[data-mode="mode"] {
+  --color-black-100: rgba(0,0,0,0.07); /* @kind color */
+  --color-black-150: rgba(0,0,0,0.12); /* @kind color */
+  --color-black-200: rgba(0,0,0,0.16); /* @kind color */
+  --color-black-300: rgba(0,0,0,0.24); /* @kind color */
+  --color-black-400: rgba(0,0,0,0.32); /* @kind color */
+  --color-black-50: rgba(0,0,0,0.04); /* @kind color */
+  --color-black-800: rgba(0,0,0,0.72); /* @kind color */
+  --color-black-950: rgb(0,0,0); /* @kind color */
+  --color-danger-500: rgb(240,61,61); /* @kind color */
+  --color-dark-100: rgb(244,244,244); /* @kind color */
+  --color-dark-200: rgb(238,238,238); /* @kind color */
+  --color-dark-700: rgb(33,33,33); /* @kind color */
+  --color-gray-200: rgb(235,236,240); /* @kind color */
+  --color-gray-300: rgb(221,223,228); /* @kind color */
+  --color-gray-600: rgb(140,146,156); /* @kind color */
+  --color-gray-700: rgb(91,97,109); /* @kind color */
+  --color-gray-950: rgb(10,12,17); /* @kind color */
+  --color-primary-100: rgb(222,234,255); /* @kind color */
+  --color-primary-900: rgb(0,43,136); /* @kind color */
+  --color-primary-950: rgb(0,24,75); /* @kind color */
+  --color-secondary-2-500: rgb(250,74,4); /* @kind color */
+  --color-shikho-ai-200: rgb(160,212,191); /* @kind color */
+  --color-shikho-ai-400: rgb(42,146,105); /* @kind color */
+  --color-vanilla-gray-200: rgb(242,241,234); /* @kind color */
+  --color-vanilla-gray-300: rgb(233,232,221); /* @kind color */
+  --color-vanilla-gray-600: rgb(147,149,135); /* @kind color */
+  --color-vanilla-gray-700: rgb(93,96,84); /* @kind color */
+  --color-vanilla-gray-950: rgb(16,17,13); /* @kind color */
+  --color-warning-400: rgb(253,203,53); /* @kind color */
+  --color-warning-500: rgb(252,191,4); /* @kind color */
+  --color-white-150: rgba(255,255,255,0.12); /* @kind color */
+  --color-white-500: rgba(255,255,255,0.48); /* @kind color */
+  --color-white-50: rgba(255,255,255,0.04); /* @kind color */
+  --color-white-800: rgba(255,255,255,0.72); /* @kind color */
+  --color-white-900: rgba(255,255,255,0.88); /* @kind color */
+  --color-white-950: rgb(255,255,255); /* @kind color */
+  --subject-colors-agriculture-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-agriculture-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-bangladesh-global-studies-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-business-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-org-mgt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-business-studies-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-chemistry-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-cicics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-economics-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-finance-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-math-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-general-science-main: rgb(254,236,236); /* @kind color */
+  --subject-colors-islam-noitik-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-logic-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-marketing-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-pm-mkt-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-social-work-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-sociology-dark: rgb(249,179,179); /* @kind color */
+  --subject-colors-statistics-dark: rgb(249,179,179); /* @kind color */
+}
+
+:root[data-mode="glass"] {
+  --color-gray: var(--color-dark-200); /* @kind color */
+  --elevation-black-50: var(--color-black-50); /* @kind color */
+  --fill-primary-100: var(--color-dark-100); /* @kind color */
+  --fill-white-950: var(--color-black-950); /* @kind color */
+  --neutral-transparent-black-black-4: var(--color-black-50); /* @kind color */
+  --outline-black-100: var(--color-black-100); /* @kind color */
+  --outline-black-50: var(--color-black-50); /* @kind color */
+  --outline-gray-300: var(--color-black-150); /* @kind color */
+  --overlay-black-300: var(--color-black-300); /* @kind color */
+  --text-gray-700: var(--color-black-800); /* @kind color */
+  --text-gray-950: var(--color-black-950); /* @kind color */
+  --text-warning-500: var(--color-warning-500); /* @kind color */
+  --text-white-950: var(--color-white-950); /* @kind color */
+}
+
+:root[data-mode="vanilla"] {
+  --color-gray: var(--color-vanilla-gray-200); /* @kind color */
+  --elevation-black-50: var(--color-black-50); /* @kind color */
+  --fill-primary-100: var(--color-shikho-ai-200); /* @kind color */
+  --fill-white-950: var(--color-black-950); /* @kind color */
+  --neutral-transparent-black-black-4: var(--color-black-50); /* @kind color */
+  --outline-black-100: var(--color-black-100); /* @kind color */
+  --outline-black-50: var(--color-black-50); /* @kind color */
+  --outline-gray-300: var(--color-vanilla-gray-300); /* @kind color */
+  --overlay-black-300: var(--color-black-300); /* @kind color */
+  --text-gray-700: var(--color-vanilla-gray-700); /* @kind color */
+  --text-gray-950: var(--color-vanilla-gray-950); /* @kind color */
+  --text-warning-500: var(--color-warning-500); /* @kind color */
+  --text-white-950: var(--color-white-950); /* @kind color */
+}
+
+:root[data-mode="app"] {
+  --font-letter-spacing-none: 0;
+  --font-line-height-caption-2: 16;
+  --font-size-caption-2: 12;
+}
+
+:root[data-mode="typeface-2"] {
+  --font-letter-spacing-none: 0;
+  --font-line-height-caption-2: 16;
+  --font-size-caption-2: 12;
+}
+
+:root[data-mode="typeface-2-mobile"] {
+  --font-letter-spacing-none: 0;
+  --font-line-height-caption-2: 16;
+  --font-size-caption-2: 12;
+}
