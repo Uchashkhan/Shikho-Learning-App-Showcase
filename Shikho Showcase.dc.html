@@ -287,7 +287,7 @@
             </div>
           </div>
           <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
-            <div style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(11,20,50,.5),0 0 0 1px rgba(255,255,255,.06)">
+            <div data-phone-bezel style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(11,20,50,.5),0 0 0 1px rgba(255,255,255,.06)">
               <div style="position:relative;height:100%;border-radius:22px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-chapter" shape="rounded" radius="22" placeholder="Chapter Test screen" src="uploads/assess-chapter.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
@@ -309,7 +309,7 @@
             </div>
           </div>
           <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
-            <div style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(50,20,90,.5),0 0 0 1px rgba(255,255,255,.06)">
+            <div data-phone-bezel style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(50,20,90,.5),0 0 0 1px rgba(255,255,255,.06)">
               <div style="position:relative;height:100%;border-radius:22px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-quiz" shape="rounded" radius="22" placeholder="Quiz screen" src="uploads/assess-quiz.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
@@ -331,7 +331,7 @@
             </div>
           </div>
           <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
-            <div style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(8,60,40,.5),0 0 0 1px rgba(255,255,255,.06)">
+            <div data-phone-bezel style="flex:0 0 auto;height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:28px;box-shadow:0 30px 56px -26px rgba(8,60,40,.5),0 0 0 1px rgba(255,255,255,.06)">
               <div style="position:relative;height:100%;border-radius:22px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-model" shape="rounded" radius="22" placeholder="Model Test screen" src="uploads/assess-model.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
@@ -539,10 +539,16 @@
 class Component extends DCLogic {
   componentDidMount() {
     this._dead = false;
-    this._reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // The pinned/scroll-jacked sections (Learn, Assessments, AI) are all
+    // designed around a fixed 100vh budget — on a short window there isn't
+    // enough room and their fixed-size content (cards, phone mockups) gets
+    // clipped or has to shrink to fit. Rather than keep shrinking it further,
+    // short windows get the same static, un-pinned, full-size fallback
+    // layout already built for prefers-reduced-motion.
+    this._reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerHeight < 950;
     const wait = () => {
       if (this._dead) return;
-      if (this._reduce) { this.staticFallback(); this.observeReveals(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); this.initNavScroll(); this.initNavSpy(); return; }
+      if (this._reduce) { this.staticFallback(); this.observeReveals(); this.initAIChat(); this.initNavLogo(); this.initNavScroll(); this.initNavSpy(); return; }
       if (window.gsap && window.ScrollTrigger) { this.initCinematic(); this.initHScroll(); this.observeReveals(); this.initShikhoAI(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); this.initNavScroll(); this.initNavSpy(); }
       else setTimeout(wait, 40);
     };
@@ -637,7 +643,7 @@ class Component extends DCLogic {
     const layer = q('[data-card-layer]'); if (layer) { layer.style.position = 'relative'; layer.style.height = 'auto'; layer.style.padding = '0'; }
     const card = q('[data-card]'); if (card) { card.style.width = '100%'; card.style.height = 'auto'; card.style.minHeight = '92vh'; card.style.borderRadius = '0'; card.style.transform = 'none'; }
     const inner = q('[data-card-inner]'); if (inner) { inner.style.position = 'relative'; inner.style.opacity = '1'; }
-    const mock = q('[data-mockup]'); if (mock) { mock.style.opacity = '1'; mock.style.transform = 'none'; }
+    const mock = q('[data-mockup]'); if (mock) { mock.style.opacity = '1'; mock.style.transform = 'none'; mock.style.height = '750px'; }
     document.querySelectorAll('[data-copy-item]').forEach(c => { c.style.opacity = '1'; c.style.transform = 'none'; c.style.filter = 'none'; });
     document.querySelectorAll('[data-hero-anim]').forEach(h => { h.style.opacity = '1'; });
     // Shikho AI orbit: reveal all statically for reduced motion.
@@ -651,7 +657,15 @@ class Component extends DCLogic {
     const hstage = q('[data-hstage]'); if (hstage) { hstage.style.position = 'static'; hstage.style.height = 'auto'; }
     const htrack = q('[data-htrack]'); if (htrack) { htrack.style.position = 'static'; htrack.style.flexDirection = 'column'; htrack.style.transform = 'none'; htrack.style.padding = '0 clamp(24px,5vw,72px) 40px'; }
     document.querySelectorAll('[data-hcard]').forEach(c => { c.style.width = '100%'; c.style.height = 'auto'; c.style.maxWidth = '860px'; c.style.margin = '0 auto'; });
+    document.querySelectorAll('[data-phone-bezel]').forEach(b => { b.style.height = '480px'; });
     const hp = q('[data-hprogress]'); if (hp && hp.parentElement) hp.parentElement.parentElement.style.display = 'none';
+    // Static AI: un-pin, show Panel A (Shikho AI intro) at rest; Panel B
+    // (Smart Class) is the pinned scroll payoff and has no static
+    // equivalent worth building, so it's simply hidden here.
+    const aihero = q('[data-aihero]'); if (aihero) { aihero.style.position = 'relative'; aihero.style.height = 'auto'; }
+    const aisec = q('#ai'); if (aisec) aisec.style.height = 'auto';
+    const panelA = q('[data-panelA]'); if (panelA) { panelA.style.position = 'relative'; panelA.style.minHeight = '100vh'; }
+    const panelB = q('[data-panelB]'); if (panelB) panelB.style.display = 'none';
   }
 
   initHScroll() {
