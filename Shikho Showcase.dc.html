@@ -255,7 +255,7 @@
   <div data-hstage style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column">
 
     <!-- header -->
-    <div style="flex:0 0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:clamp(40px,7vh,72px) clamp(24px,5vw,72px) clamp(20px,3vh,32px)">
+    <div style="flex:0 0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:clamp(76px,9vh,96px) clamp(24px,5vw,72px) clamp(20px,3vh,32px)">
       <div style="max-width:680px">
         <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#2F5CFF">03 — Assessments</div>
         <h2 style="margin:14px 0 0;font-weight:800;font-size:clamp(30px,4.2vw,54px);line-height:1.04;letter-spacing:-.03em;color:#0B1220">
@@ -276,7 +276,7 @@
       <div data-htrack style="position:absolute;top:0;left:0;height:100%;display:flex;align-items:center;gap:clamp(20px,2.4vw,34px);padding:0 clamp(24px,5vw,72px);will-change:transform">
 
         <!-- CARD 1 — Chapter Tests -->
-        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(62vh,600px);border-radius:34px;background:linear-gradient(145deg,#EAF1FF 0%,#D3E2FF 100%);box-shadow:0 40px 80px -44px rgba(21,54,140,.5),0 0 0 1px rgba(21,54,140,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
+        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(100%,600px);border-radius:34px;background:linear-gradient(145deg,#EAF1FF 0%,#D3E2FF 100%);box-shadow:0 40px 80px -44px rgba(21,54,140,.5),0 0 0 1px rgba(21,54,140,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
           <div style="flex:1 1 auto;min-width:0">
             <div style="font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#2F5CFF">01 · Chapter Tests</div>
             <h3 style="margin:14px 0 0;font-weight:800;font-size:clamp(26px,2.7vw,40px);line-height:1.06;letter-spacing:-.025em;color:#0B1220;text-wrap:balance">Test what you just learned, while it's fresh.</h3>
@@ -286,9 +286,9 @@
               <span style="font-weight:600;font-size:12.5px;color:#2F5CFF;background:rgba(47,92,255,.1);padding:7px 12px;border-radius:999px">Instant score</span>
             </div>
           </div>
-          <div style="flex:0 0 auto;align-self:center">
-            <div style="width:clamp(190px,15vw,236px);padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(11,20,50,.5),0 0 0 1px rgba(255,255,255,.06)">
-              <div style="position:relative;border-radius:33px;overflow:hidden;background:#eef1f6;aspect-ratio:9/19.3">
+          <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
+            <div style="height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(11,20,50,.5),0 0 0 1px rgba(255,255,255,.06)">
+              <div style="position:relative;height:100%;border-radius:33px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-chapter" shape="rounded" radius="33" placeholder="Chapter Test screen" src="uploads/assess-chapter.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
               </div>
@@ -298,7 +298,7 @@
         </article>
 
         <!-- CARD 2 — Quizzes -->
-        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(62vh,600px);border-radius:34px;background:linear-gradient(145deg,#F2ECFF 0%,#E1D2FF 100%);box-shadow:0 40px 80px -44px rgba(78,44,160,.45),0 0 0 1px rgba(78,44,160,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
+        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(100%,600px);border-radius:34px;background:linear-gradient(145deg,#F2ECFF 0%,#E1D2FF 100%);box-shadow:0 40px 80px -44px rgba(78,44,160,.45),0 0 0 1px rgba(78,44,160,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
           <div style="flex:1 1 auto;min-width:0">
             <div style="font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6D4DFF">02 · Quizzes</div>
             <h3 style="margin:14px 0 0;font-weight:800;font-size:clamp(26px,2.7vw,40px);line-height:1.06;letter-spacing:-.025em;color:#0B1220;text-wrap:balance">Quick checks. Real progress.</h3>
@@ -308,9 +308,9 @@
               <span style="font-weight:600;font-size:12.5px;color:#6D4DFF;background:rgba(109,77,255,.1);padding:7px 12px;border-radius:999px">Daily streaks</span>
             </div>
           </div>
-          <div style="flex:0 0 auto;align-self:center">
-            <div style="width:clamp(190px,15vw,236px);padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(50,20,90,.5),0 0 0 1px rgba(255,255,255,.06)">
-              <div style="position:relative;border-radius:33px;overflow:hidden;background:#eef1f6;aspect-ratio:9/19.3">
+          <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
+            <div style="height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(50,20,90,.5),0 0 0 1px rgba(255,255,255,.06)">
+              <div style="position:relative;height:100%;border-radius:33px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-quiz" shape="rounded" radius="33" placeholder="Quiz screen" src="uploads/assess-quiz.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
               </div>
@@ -320,7 +320,7 @@
         </article>
 
         <!-- CARD 3 — Model Tests -->
-        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(62vh,600px);border-radius:34px;background:linear-gradient(145deg,#E8FBF2 0%,#CFF1E2 100%);box-shadow:0 40px 80px -44px rgba(16,110,74,.42),0 0 0 1px rgba(16,110,74,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
+        <article data-hcard style="flex:0 0 auto;width:clamp(600px,66vw,860px);height:min(100%,600px);border-radius:34px;background:linear-gradient(145deg,#E8FBF2 0%,#CFF1E2 100%);box-shadow:0 40px 80px -44px rgba(16,110,74,.42),0 0 0 1px rgba(16,110,74,.06);display:flex;align-items:center;gap:clamp(20px,2.5vw,40px);padding:clamp(30px,3.5vw,52px);overflow:hidden;position:relative">
           <div style="flex:1 1 auto;min-width:0">
             <div style="font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#12A46A">03 · Model Tests</div>
             <h3 style="margin:14px 0 0;font-weight:800;font-size:clamp(26px,2.7vw,40px);line-height:1.06;letter-spacing:-.025em;color:#0B1220;text-wrap:balance">Practice like it's exam day.</h3>
@@ -330,9 +330,9 @@
               <span style="font-weight:600;font-size:12.5px;color:#12A46A;background:rgba(18,164,106,.1);padding:7px 12px;border-radius:999px">Timed</span>
             </div>
           </div>
-          <div style="flex:0 0 auto;align-self:center">
-            <div style="width:clamp(190px,15vw,236px);padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(8,60,40,.5),0 0 0 1px rgba(255,255,255,.06)">
-              <div style="position:relative;border-radius:33px;overflow:hidden;background:#eef1f6;aspect-ratio:9/19.3">
+          <div style="flex:0 0 auto;align-self:stretch;display:flex;align-items:center;justify-content:center">
+            <div style="height:min(100%,480px);aspect-ratio:9/19.3;padding:7px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:40px;box-shadow:0 30px 56px -26px rgba(8,60,40,.5),0 0 0 1px rgba(255,255,255,.06)">
+              <div style="position:relative;height:100%;border-radius:33px;overflow:hidden;background:#eef1f6">
                 <image-slot id="assess-model" shape="rounded" radius="33" placeholder="Model Test screen" src="uploads/assess-model.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block"></image-slot>
                 <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;box-shadow:inset 0 0 0 1.4px rgba(255,255,255,.14);z-index:4"></div>
               </div>
