@@ -29,6 +29,18 @@
     [data-book-cover]{animation:none !important;transform:rotateY(-28deg) !important}
     [data-book-rise]{animation:none !important;opacity:1 !important}
   }
+  /* Pinned sections (Learn/Assessments/AI) stay pinned and scroll-jacked at
+     every height, same interaction as a normal window — but on a short one,
+     trim the secondary header chrome (subtitle, scroll hint, padding) so the
+     actual cards/phone mockups keep more of the 100vh budget and shrink less. */
+  @media (max-height: 760px){
+    [data-compact-hide]{display:none !important}
+    [data-compact-header]{padding-top:76px !important;padding-bottom:10px !important}
+    [data-compact-title]{font-size:26px !important;margin-top:8px !important}
+    [data-compact-footer]{padding:8px clamp(24px,5vw,72px) 14px !important}
+    #learn{padding-top:40px !important;padding-bottom:24px !important;--learn-vpad:64px !important}
+    [data-compact-top2]{margin-top:96px !important}
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -80,7 +92,7 @@
       <!-- inner glow -->
       <div style="position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(91,124,255,.22),transparent 66%);pointer-events:none;z-index:0"></div>
 
-      <div id="learn" data-card-inner style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:88px clamp(24px,6vw,88px) 44px;will-change:opacity">
+      <div id="learn" data-card-inner style="position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;padding:88px clamp(24px,6vw,88px) 44px;--learn-vpad:132px;will-change:opacity">
         <div style="width:100%;max-width:1180px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:clamp(36px,5vw,72px)">
 
           <!-- LEFT: COPY -->
@@ -129,7 +141,7 @@
 
           <!-- RIGHT: PHONE + PER-FEATURE SCREENS & FLOATING ELEMENTS -->
           <div data-phone-area style="flex:0 0 auto;position:relative;perspective:1100px">
-            <div data-mockup style="flex-shrink:0;height:min(750px,calc(84vh - 132px));aspect-ratio:9/19.3;padding:11px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:58px;box-shadow:0 44px 90px -30px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform">
+            <div data-mockup style="flex-shrink:0;height:min(750px,calc(84vh - var(--learn-vpad,132px)));aspect-ratio:9/19.3;padding:11px;background:linear-gradient(160deg,#2b2d31,#0b0b0d);border-radius:58px;box-shadow:0 44px 90px -30px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.06);transform-style:preserve-3d;will-change:transform">
               <div style="position:relative;height:100%;border-radius:46px;overflow:hidden;background:#0c1220">
                 <image-slot id="learn-live" data-screen="0" shape="rounded" radius="46" placeholder="Drop Live Class screen / animation" src="uploads/learn-live.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:1;transition:opacity .55s ease"></image-slot>
                 <image-slot id="learn-recorded" data-screen="1" shape="rounded" radius="46" placeholder="Drop Recorded Class screen / animation" src="uploads/learn-recorded.gif" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .55s ease"></image-slot>
@@ -255,15 +267,15 @@
   <div data-hstage style="position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column">
 
     <!-- header -->
-    <div style="flex:0 0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:clamp(76px,9vh,96px) clamp(24px,5vw,72px) clamp(20px,3vh,32px)">
+    <div data-compact-header style="flex:0 0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding:clamp(76px,9vh,96px) clamp(24px,5vw,72px) clamp(20px,3vh,32px)">
       <div style="max-width:680px">
         <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .9s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1);font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#2F5CFF">03 — Assessments</div>
-        <h2 style="margin:14px 0 0;font-weight:800;font-size:clamp(30px,4.2vw,54px);line-height:1.04;letter-spacing:-.03em;color:#0B1220">
+        <h2 data-compact-title style="margin:14px 0 0;font-weight:800;font-size:clamp(30px,4.2vw,54px);line-height:1.04;letter-spacing:-.03em;color:#0B1220">
           <span data-reveal style="display:inline-block;opacity:0;transform:translateY(20px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1)">Know where you stand, before the exam does.</span>
         </h2>
-        <p data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1);transition-delay:.1s;margin:16px 0 0;font-weight:500;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:#5b6472;max-width:560px">Chapter tests, quizzes, and model tests that mirror the real thing.</p>
+        <p data-reveal data-compact-hide style="opacity:0;transform:translateY(18px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1);transition-delay:.1s;margin:16px 0 0;font-weight:500;font-size:clamp(16px,1.5vw,20px);line-height:1.5;color:#5b6472;max-width:560px">Chapter tests, quizzes, and model tests that mirror the real thing.</p>
       </div>
-      <div data-reveal style="opacity:0;transition:opacity 1s ease;transition-delay:.2s;display:flex;align-items:center;gap:10px;color:#9aa4b4;font-weight:600;font-size:13px;white-space:nowrap;padding-bottom:6px">
+      <div data-reveal data-compact-hide style="opacity:0;transition:opacity 1s ease;transition-delay:.2s;display:flex;align-items:center;gap:10px;color:#9aa4b4;font-weight:600;font-size:13px;white-space:nowrap;padding-bottom:6px">
         <span>Scroll</span>
         <span style="display:inline-block;width:44px;height:1.5px;background:linear-gradient(90deg,#9aa4b4,transparent);position:relative">
           <span style="position:absolute;right:-1px;top:-3px;width:7px;height:7px;border-top:1.5px solid #9aa4b4;border-right:1.5px solid #9aa4b4;transform:rotate(45deg)"></span>
@@ -345,7 +357,7 @@
     </div>
 
     <!-- progress bar -->
-    <div style="flex:0 0 auto;padding:clamp(16px,2.5vh,28px) clamp(24px,5vw,72px) clamp(28px,4vh,44px)">
+    <div data-compact-footer style="flex:0 0 auto;padding:clamp(16px,2.5vh,28px) clamp(24px,5vw,72px) clamp(28px,4vh,44px)">
       <div style="height:3px;border-radius:3px;background:rgba(11,18,32,.09);overflow:hidden;max-width:100%">
         <div data-hprogress style="height:100%;width:33%;border-radius:3px;background:linear-gradient(90deg,#2F5CFF,#6D4DFF);transform-origin:left center"></div>
       </div>
@@ -504,11 +516,11 @@
     <!-- PANEL B — Smart Class (appears on top of the circles) -->
     <div data-panelB style="position:absolute;inset:0;opacity:0;z-index:3;display:flex;flex-direction:column;align-items:center">
       <!-- logo + title -->
-      <div style="flex:0 0 auto;margin-top:clamp(112px,11vh,14%);display:flex;flex-direction:column;align-items:center;padding:0 24px">
+      <div data-compact-top2 style="flex:0 0 auto;margin-top:clamp(112px,11vh,14%);display:flex;flex-direction:column;align-items:center;padding:0 24px">
         <div style="display:flex;align-items:center;justify-content:center">
           <img src="ai-assets/smartclass-logo.svg" alt="Smart Class" style="height:clamp(30px,3.1vw,40px);width:auto;display:block" />
         </div>
-        <h2 style="margin:clamp(16px,2vw,26px) auto 0;max-width:680px;font-weight:800;font-size:clamp(30px,4.6vw,54px);line-height:1.06;letter-spacing:-.03em;text-align:center;color:#0e0a1e">Any video, now a guided class.</h2>
+        <h2 data-compact-title style="margin:clamp(16px,2vw,26px) auto 0;max-width:680px;font-weight:800;font-size:clamp(30px,4.6vw,54px);line-height:1.06;letter-spacing:-.03em;text-align:center;color:#0e0a1e">Any video, now a guided class.</h2>
       </div>
       <!-- gif placeholder — fills whatever space remains below the title, so it
            can never overlap the title or overflow the pinned stage's bottom -->
