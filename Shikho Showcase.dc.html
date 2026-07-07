@@ -43,12 +43,12 @@
     <img data-logo="white" src="ai-assets/shikho-logo-white.svg" alt="Shikho" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:1;transition:opacity .35s ease" />
     <img data-logo="colored" src="ai-assets/shikho-logo-colored.svg" alt="Shikho" style="position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .35s ease" />
   </a>
-  <div style="display:flex;gap:clamp(14px,2.4vw,34px);align-items:center">
-    <a href="#learn" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72)">Learn</a>
-    <a href="#ebooks" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72)">E-books</a>
-    <a href="#assessments" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72)">Assessments</a>
-    <a href="#reports" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72)">Reports</a>
-    <a href="#ai" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72)">AI</a>
+  <div data-nav-links style="display:flex;gap:clamp(14px,2.4vw,34px);align-items:center">
+    <a href="#learn" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72);border-bottom:2px solid transparent;padding-bottom:4px;transition:color .3s ease,border-color .3s ease">Learn</a>
+    <a href="#ebooks" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72);border-bottom:2px solid transparent;padding-bottom:4px;transition:color .3s ease,border-color .3s ease">E-books</a>
+    <a href="#assessments" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72);border-bottom:2px solid transparent;padding-bottom:4px;transition:color .3s ease,border-color .3s ease">Assessments</a>
+    <a href="#reports" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72);border-bottom:2px solid transparent;padding-bottom:4px;transition:color .3s ease,border-color .3s ease">Reports</a>
+    <a href="#ai" style="text-decoration:none;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.72);border-bottom:2px solid transparent;padding-bottom:4px;transition:color .3s ease,border-color .3s ease">AI</a>
   </div>
 </div>
 
@@ -541,8 +541,8 @@ class Component extends DCLogic {
     this._reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const wait = () => {
       if (this._dead) return;
-      if (this._reduce) { this.staticFallback(); this.observeReveals(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); return; }
-      if (window.gsap && window.ScrollTrigger) { this.initCinematic(); this.initHScroll(); this.observeReveals(); this.initShikhoAI(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); }
+      if (this._reduce) { this.staticFallback(); this.observeReveals(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); this.initNavScroll(); this.initNavSpy(); return; }
+      if (window.gsap && window.ScrollTrigger) { this.initCinematic(); this.initHScroll(); this.observeReveals(); this.initShikhoAI(); this.initAIChat(); this.initSmartClass(); this.initNavLogo(); this.initNavScroll(); this.initNavSpy(); }
       else setTimeout(wait, 40);
     };
     wait();
@@ -566,6 +566,48 @@ class Component extends DCLogic {
     update();
     window.addEventListener('scroll', update, { passive: true });
     this._navLogoUpdate = update;
+  }
+
+  // Intercepts nav anchor clicks so section jumps animate instead of
+  // snapping — native smooth-scroll rather than a GSAP dependency, since
+  // ScrollTrigger just reads window scroll position regardless of source.
+  initNavScroll() {
+    const nav = document.querySelector('[data-nav]');
+    const navH = nav ? nav.offsetHeight : 0;
+    const links = Array.from(document.querySelectorAll('a[href^="#"]'));
+    links.forEach((a) => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        const y = target.getBoundingClientRect().top + window.scrollY - navH;
+        window.scrollTo({ top: Math.max(0, y), behavior: this._reduce ? 'auto' : 'smooth' });
+      });
+    });
+  }
+
+  // Highlights whichever nav link's section currently sits at the
+  // viewport's vertical center — robust across the short sections and
+  // the very tall scroll-jacked ones (Learn, Assessments, AI) alike.
+  initNavSpy() {
+    const linksWrap = document.querySelector('[data-nav-links]');
+    if (!linksWrap) return;
+    const links = Array.from(linksWrap.querySelectorAll('a[href^="#"]'));
+    const targets = links.map(a => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
+    if (!targets.length) return;
+    const setActive = (id) => {
+      links.forEach((a) => {
+        const on = a.getAttribute('href') === '#' + id;
+        a.style.color = on ? '#fff' : 'rgba(255,255,255,.72)';
+        a.style.borderColor = on ? '#5B7CFF' : 'transparent';
+      });
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    targets.forEach(t => io.observe(t));
+    this._navSpyIO = io;
   }
 
   observeReveals() {
@@ -992,6 +1034,7 @@ class Component extends DCLogic {
     if (this._st) { this._st.kill(); this._st = null; }
     if (this._tl) { this._tl.kill(); this._tl = null; }
     if (this._navLogoUpdate) window.removeEventListener('scroll', this._navLogoUpdate);
+    if (this._navSpyIO) this._navSpyIO.disconnect();
   }
 
   renderVals() { return {}; }
